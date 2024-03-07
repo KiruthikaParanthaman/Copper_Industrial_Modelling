@@ -12,8 +12,8 @@ import imblearn
 from sklearn.preprocessing import StandardScaler
 
 #Load models
-class_bb_model = pd.read_pickle('E:\\Winnie Documents\\Guvi\\project\\Copper Modelling\\balancebagging_model.pkl')
-reg_rf_model = pd.read_pickle('E:\\Winnie Documents\\Guvi\\project\\Copper Modelling\\random_forest_model.pkl')
+class_bb_model = pd.read_pickle('balancebagging_model.pkl')
+reg_rf_model = pd.read_pickle('random_forest_model.pkl')
 
 
 #Label Encoding user input
@@ -114,7 +114,7 @@ if selected == "Sales price Prediction":
                lt3 = label_encode("month",month)
                input_val = lt1+lt2+lt3
                print(input_val)
-               with open("E:\Winnie Documents\Guvi\project\Copper Modelling\standard_scalar_regr.pkl",'rb') as f:
+               with open("\standard_scalar_regr.pkl",'rb') as f:
                     scr = pickle.load(f)   
                input_arr = np.array([input_val])
                input_sc = scr.transform(input_arr)       
@@ -159,7 +159,7 @@ if selected == "Status prediction":
                l3 = label_encode("month",month)
                input = l1+l2+l3
                print(input)
-               with open('E:\Winnie Documents\Guvi\project\Copper Modelling\standard_scalar.pkl','rb') as f:
+               with open('standard_scalar.pkl','rb') as f:
                     sc = pickle.load(f)   
                input_array = np.array([input])
                input_scaled = sc.transform(input_array)       
